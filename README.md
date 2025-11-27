@@ -43,8 +43,8 @@ docker buildx build --build-arg CUDA_AVAILABLE=false -t smolvlm2-app .
         -it --name smolvlm2-app smolvlm2-app
     ```
 
-3.2. Смена device GPU/CPU
-    1. С использованием GPU:
+3.2. Смена device GPU/CPU<br>
+1. С использованием GPU:<br>
     ```bash
     docker run -v $(pwd)/examples:/app/examples \ 
         -v $(pwd)/model_params:/app/model_params \
@@ -54,7 +54,7 @@ docker buildx build --build-arg CUDA_AVAILABLE=false -t smolvlm2-app .
         -p 7860:7860 \
         -it --gpus all --name smolvlm2-app smolvlm2-app
     ```
-    2. CPU-only:
+2. CPU-only:<br>
     ```bash
     docker run -v $(pwd)/examples:/app/examples \
         -v $(pwd)/model_params:/app/model_params \
@@ -77,7 +77,7 @@ docker run -v $(pwd)/examples:/app/examples \
     -it --name smolvlm2-app smolvlm2-app
 ```
 
-3.4. Смена порта
+3.4. Смена порта<br>
 Меняем порт, публикуемый при запуске контейнера:
 ```bash
 docker run -v $(pwd)/examples:/app/examples \ 

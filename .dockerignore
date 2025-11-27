@@ -13,3 +13,4 @@ results/
 results;C/
 __pycache__
 examples_old/
+secret.txt

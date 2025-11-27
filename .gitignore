@@ -16,3 +16,4 @@ my_file_.txt
 *.safetensors
 merges.txt
 hf_cache/
+secret.txt

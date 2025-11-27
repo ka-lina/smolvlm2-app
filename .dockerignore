@@ -1,0 +1,15 @@
+env/
+env2/
+test.ipynb
+frontend_test.py
+my_file.txt
+smolvlm/
+model_params/
+model_params;C/
+examples/
+examples;C/
+.gradio/flagged
+results/
+results;C/
+__pycache__
+examples_old/

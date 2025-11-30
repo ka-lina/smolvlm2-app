@@ -8,21 +8,16 @@
     В интерфейсе можно приложить картику или pdf. На выходе можно скачать результат в виде файла txt.
 
 ## Запуск проекта
-Технические требования: Ubuntu22.04, CUDA>=12.1
+Технические требования: CUDA>=12.1
 
 1. **Склонировать репозиторий**
 ```bash
-git clone 
-cd 
+git clone https://github.com/ka-lina/smolvlm2-app.git
+cd smolvlm2-app
 ```
 2. **Build Docker Container**
 ```bash
 docker build -t smolvlm2-app .
-```
-
-Если на устройстве нет GPU или поддержки CUDA (от этого зависит установка pytorch - для cuda/cpu)
-```bash
-docker buildx build --build-arg CUDA_AVAILABLE=false -t smolvlm2-app .
 ```
 3. **Run Docker Container**<br>
 Возможные параметры при запуске:
@@ -58,7 +53,7 @@ docker buildx build --build-arg CUDA_AVAILABLE=false -t smolvlm2-app .
 3.2. Смена device GPU/CPU<br>
 1. С использованием GPU: добавляем параметр --gpus all <br>
     ```bash
-    docker run -v $(pwd)/examples:/app/examples \ 
+    docker run -v $(pwd)/examples:/app/examples \
         -v $(pwd)/model_params:/app/model_params \
         -v $(pwd)/results:/app/results \
         -v path/to/hf_cache:/root/.cache/huggingface \
@@ -93,7 +88,7 @@ docker run -v $(pwd)/examples:/app/examples \
 3.4. Смена порта<br>
 Меняем порт, публикуемый при запуске контейнера:
 ```bash
-docker run -v $(pwd)/examples:/app/examples \ 
+docker run -v $(pwd)/examples:/app/examples \
     -v $(pwd)/model_params:/app/model_params \
     -v $(pwd)/results:/app/results \
     -v path/to/hf_cache:/root/.cache/huggingface \

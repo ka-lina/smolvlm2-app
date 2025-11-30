@@ -24,7 +24,7 @@ class SmolVLM2:
     def __init__(self, device=None, parameters_path=None, model_size='256M',
                  save_model=False, save_params_path='model_params'):
         self.device = device if device is not None else "cuda" if torch.cuda.is_available() else "cpu"
-        print(self.device)
+
         if parameters_path is None or parameters_path == 'None':
             self.model_name = MODEL_SIZES.get(model_size)
             if self.model_name is None:
